@@ -1,0 +1,11 @@
+.scroll-fadein {
+	z-index: 1;
+	opacity : 0.1;
+	transform : translate(0, 0px);
+	transition : all 500ms;
+}
+
+.scroll-fadein.scrollin {
+	opacity : 1.0;
+	transform : translate(0, -200px);
+}

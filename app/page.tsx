@@ -5,6 +5,8 @@ import {Swiper, SwiperSlide} from "swiper/react"
 import "swiper/css"
 import { Autoplay, Pagination } from 'swiper/modules'
 
+import "./root-page.css"
+
 const IMAGE_PATH = "/image/"
 
 const images = [
@@ -27,17 +29,40 @@ export default function Home(){
       "disableOnInteraction": false,
     }
   }
+
+  const imageSize = {
+    width: 4096,
+    height: 3072
+  }
+
   return (
-    <div>
-      <Swiper {...splideOptions}>
-        {images.map((image:string, index:number) => {
-          return (
-            <SwiperSlide className="h-320" key={index}>
-              <Image src={IMAGE_PATH+image} layout="responsive" height={100} width={200} alt={image}/>
-            </SwiperSlide>
-          )
-        })}
-      </Swiper>
+    <div className="home-page">
+      <div className="slide">
+        <Swiper {...splideOptions}>
+          {images.map((image:string, index:number) => {
+            return (
+              <SwiperSlide key={index}>
+                <Image 
+                  src={IMAGE_PATH+image}
+                  width={imageSize.width}
+                  height={imageSize.height}
+                  sizes={"70vw"}
+                  style={{
+                    marginLeft: "auto",
+                    marginRight: "auto"
+                  }}
+                  alt={image}
+                />
+              </SwiperSlide>
+            )
+          })}
+        </Swiper>
+      </div>
+      <div className="main-content mt-20">
+        <div className="circle-name w-full">
+          <h1 className="text-7xl text-center">プログラミング研究会</h1>
+        </div>
+      </div>
     </div>
   )
 }
