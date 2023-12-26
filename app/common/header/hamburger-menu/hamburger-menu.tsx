@@ -2,24 +2,57 @@
 
 import {useState} from "react"
 
-type props = {
-	//children: React.ReactNode,
-	className: string
+import "./hamburger-menu.css"
+import Link from "next/link";
+
+export type hamburgerLink = {
+	url:string,
+	name:string,
 }
 
-export default function HamburgerMenu({
-	//children,
-	className
+type genUrlArg = {
+	className:string|undefined,
+	links:hamburgerLink[]
+}
+
+export function UrlList({
+	className,
+	links
+}:genUrlArg) {
+	return (
+		<ul className={className}>
+			{links.map((link, index) => {
+				return (
+					<li key={index}>
+						<Link className="text-xl" href={link.url}>{link.name}</Link>
+					</li>
+				)
+			})}
+		</ul>
+	)
+}
+
+type props = {
+	className: string|undefined,
+	links: hamburgerLink[],
+}
+
+export function HamburgerMenu({
+	className,
+	links,
 }:props) {
 
 	const [toggle, setToggle] = useState<boolean>(false)
 
 	return (
 		<div className={"hamburger-menu " + className}>
-			<button type="button" className="hamburger-icon w-10 h-10 rounded-full bg-amber-100 " onClick={() => {setToggle(!toggle);console.log(toggle)}}>
-				<span className="hamburger-bar relative block h-1 w-8 top-0 bg-black"></span>
-				<span className="hamburger-bar relative block h-1 w-8 top-2 bg-black"></span>
-				<span className="hamburger-bar relative block h-1 w-8 top-4 bg-black"></span>
+			{toggle ? (
+				<UrlList className="menu-list" links={links}></UrlList>
+			):null}
+			<button type="button" className="hamburger-icon w-16 h-16 rounded-2xl bg-amber-100 bg-opacity-80" onClick={() => {setToggle(!toggle);console.log(toggle)}}>
+				<div className="hamburger-bar w-full h-full">
+					<span/>
+				</div>
 			</button>
 		</div>
 	)

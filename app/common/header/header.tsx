@@ -1,8 +1,26 @@
 import Link from "next/link"
 
-import HamburgerMenu from "./hamburger-menu/hamburger-menu"
+import {HamburgerMenu, hamburgerLink} from "./hamburger-menu/hamburger-menu"
+import "./header.css"
+
 
 export default function Header() {
+
+	let menuList: hamburgerLink[] = [
+		{
+			name: "メンバー",
+			url: "/member",
+		},
+		{
+			name: "メンバー",
+			url: "/member",
+		},
+		{
+			name: "メンバー",
+			url: "/member",
+		}
+	]
+
 	return (
 		<header className="top-0 w-full h-24 flex items-center p-5 fixed z-50 justify-between">
 			<div className="circle-name">
@@ -13,7 +31,7 @@ export default function Header() {
 				<li><Link href="/member" className=" text-xl">メンバー</Link></li>
 				<li><Link href="/member" className=" text-xl">メンバー</Link></li>
 			</ul>
-			<HamburgerMenu className="block md:hidden"/>
+			<HamburgerMenu className="block md:hidden" links={menuList}/>
 		</header>
 	)
 }
