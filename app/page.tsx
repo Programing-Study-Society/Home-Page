@@ -58,7 +58,7 @@ export default function Home(){
           })}
         </Swiper>
       </div>
-      <div className="main-content mt-20">
+      <div className="main-contents">
         <div className="circle-name w-full">
           <h1 className="text-7xl text-center">プログラミング研究会</h1>
         </div>

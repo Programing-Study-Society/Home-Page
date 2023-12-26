@@ -4,23 +4,7 @@ import {HamburgerMenu, hamburgerLink} from "./hamburger-menu/hamburger-menu"
 import "./header.css"
 
 
-export default function Header() {
-
-	let menuList: hamburgerLink[] = [
-		{
-			name: "メンバー",
-			url: "/member",
-		},
-		{
-			name: "メンバー",
-			url: "/member",
-		},
-		{
-			name: "メンバー",
-			url: "/member",
-		}
-	]
-
+export default function Header({menuList}:{menuList:hamburgerLink[]}) {
 	return (
 		<header className="top-0 w-full h-24 flex items-center p-5 fixed z-50 justify-between">
 			<div className="circle-name">
