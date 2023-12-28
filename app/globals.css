@@ -6,3 +6,11 @@
 :root {
   --thema-color-rgb: 137, 255, 147;
 }
+
+.x-profile-button {
+	transition: all 0.25s ease-out;
+}
+
+.x-profile-button:hover {
+  background-color: #008fee;
+}

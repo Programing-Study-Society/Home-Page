@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import Header from '@components/header/header'
@@ -36,6 +37,9 @@ export default function RootLayout({
 			<body className={inter.className}>
 				<Header menuList={menuList}/>
 				{children}
+				<Link href="https://twitter.com/OECU_ProKen" className="x-profile-button fixed text-xl right-10 bottom-10 z-10 bg-sky-500 text-gray-200 p-4 rounded-2xl">
+					X をフォロー
+				</Link>
 			</body>
 		</html>
 	)

@@ -58,10 +58,8 @@ export default function Home(){
           })}
         </Swiper>
       </div>
-      <div className="main-contents">
-        <div className="circle-name w-full">
+      <div className="main-contents justify-center">
           <h1 className="text-7xl text-center">プログラミング研究会</h1>
-        </div>
       </div>
     </div>
   )
