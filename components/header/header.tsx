@@ -11,9 +11,11 @@ export default function Header({menuList}:{menuList:hamburgerLink[]}) {
 				<Link href="/" className="text-2xl font-mono">プログラミング研究会</Link>
 			</div>
 			<ul className="hidden md:flex header-menu gap-3 duration-[1s]">
-				<li><Link href="/member" className=" text-xl">メンバー</Link></li>
-				<li><Link href="/member" className=" text-xl">メンバー</Link></li>
-				<li><Link href="/member" className=" text-xl">メンバー</Link></li>
+				{menuList.map((link, index) => {
+					return (
+						<li key={index}><Link href={link.url} className=" text-xl">{link.name}</Link></li>
+					)
+				})}
 			</ul>
 			<HamburgerMenu className="block md:hidden" links={menuList}/>
 		</header>

@@ -23,8 +23,10 @@ export function UrlList({
 		<ul className={className}>
 			{links.map((link, index) => {
 				return (
-					<li className="menu-link" key={index}>
-						<Link className="text-xl" href={link.url}>{link.name}</Link>
+					<li key={index} className="menu-link">
+						<Link  href={link.url}>
+							<div className="menu-link-item w-full h-full text-gray-700 text-xl">{link.name}</div>
+						</Link>
 					</li>
 				)
 			})}
@@ -46,14 +48,10 @@ export function HamburgerMenu({
 
 	return (
 		<div className={"hamburger-menu " + className}>
-			{toggle ? (
-				<UrlList className="menu-list slide-in" links={links}></UrlList>
-			):(
-				<UrlList className="menu-list slide-out" links={links}></UrlList>
-			)}
+			<UrlList className={"menu-list left-0 " + (toggle?"menu-list-active":"")} links={links}/>
 			<button 
 				type="button" 
-				className="hamburger-icon w-16 h-16 rounded-2xl bg-gray-600 bg-opacity-80" 
+				className="hamburger-icon w-14 rounded-2xl" 
 				onClick={() => {setToggle(!toggle);console.log(toggle)}}
 			>
 				<div className="hamburger-bar w-full h-full">

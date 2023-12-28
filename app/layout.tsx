@@ -13,8 +13,8 @@ export const metadata: Metadata = {
 
 let menuList: hamburgerLink[] = [
 	{
-		name: "メンバー",
-		url: "/member",
+		name: "ホーム",
+		url: "/",
 	},
 	{
 		name: "メンバー",
