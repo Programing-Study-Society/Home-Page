@@ -1,3 +1,90 @@
+:root {
+	--slide-size: 70vw;
+}
+
+/* トップの写真 */
+.scroll-allow {
+	width: 100%;
+	height: 30px;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	animation: move-allow 2s infinite;
+}
+
+@keyframes move-allow {
+	0% {
+		top: calc(var(--slide-size) - 4vw);
+	}
+	50% {
+		top: calc(var(--slide-size) - 2vw);
+	}
+	100% {
+		top: calc(var(--slide-size) - 4vw);
+	}
+}
+
+.scroll-allow::before,
+.scroll-allow::after {
+	content: '';
+	background-color: #000;
+	margin: 0 -0.8vw;
+	height: 0.75vw;
+	width: 4vw;
+	z-index: 1;
+}
+
+.scroll-allow::before {
+	transform:rotate(45deg);
+}
+
+.scroll-allow::after {
+	transform:rotate(-45deg);
+}
+
+
+/* メインの内容 */
 .main-contents {
-	top: 640px;
+	border-top: #000 solid 4px;
+}
+
+.news {
+	margin: 10vw;
+	height: max(20vw, 200px);
+	background-color: #e4e4e4;
+	border-radius: 5px;
+	border: #000 solid 2px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+.news h2 {
+	margin: 0 2vw;
+	padding: 1vw;
+}
+
+.news-list {
+	border-top: 0.1rem solid black;
+	padding: 1vw 4vw;
+}
+
+.about-us {
+	margin: 0 4vw;
+	padding: 0 2vw;
+	border: #00eeff double 4px;
+	border-radius: 5px;
+}
+
+.about-us h2 {
+	display: inline-block;
+	position: relative;
+	font-size: 3.5vw;
+	padding: 0 2vw;
+	background-color: #fff;
+	top: -2vw;
+}
+
+.about-us p {
+	font-size: 2vw;
+	padding: 2vw 4vw;
 }

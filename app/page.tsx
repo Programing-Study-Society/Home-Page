@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image"
+import Link from "next/link"
 import {Swiper, SwiperSlide} from "swiper/react"
 import "swiper/css"
 import { Autoplay, Pagination } from 'swiper/modules'
@@ -14,6 +15,16 @@ const images = [
   "2023-oecu-fes.jpg",
   "2023-summer.jpg"
 ];
+
+let now:Date = new Date;
+
+const news = [
+  {
+    url: "/",
+    title: "初めまして！",
+    date: now.getFullYear().toString() + "/" + now.getMonth().toString() + "/" + now.getDay().toString(),
+  }
+]
 
 export default function Home(){
   const splideOptions = {
@@ -46,7 +57,7 @@ export default function Home(){
                   src={IMAGE_PATH+image}
                   width={imageSize.width}
                   height={imageSize.height}
-                  sizes={"70vw"}
+                  sizes={"50vw"}
                   style={{
                     marginLeft: "auto",
                     marginRight: "auto"
@@ -57,9 +68,30 @@ export default function Home(){
             )
           })}
         </Swiper>
+        <div className="scroll-allow"/>
       </div>
       <div className="main-contents justify-center">
-          <h1 className="text-7xl text-center">プログラミング研究会</h1>
+        <div className="news">
+          <h2 className="text-2xl">お知らせ</h2>
+          <ul className="news-list">
+            {news.map((ele, index) => {
+              return (
+                <li key={index} className="w-full">
+                  <Link href={ele.url} className="w-full h-full">{ele.date}　{ele.title}</Link>
+                </li>
+              )
+            })}
+          </ul>
+        </div>
+        <div className="about-us">
+          <h2>プログラミング研究会とは</h2>
+          <p>
+            プログラムについて学びあい交流を深めていくサークルです！<br />
+            ・サークル内で勉強会をして学ぶ<br />
+            ・プロジェクトを立ち上げて制作活動をする<br />
+            といったことを普段は行っています！
+          </p>
+        </div>
       </div>
     </div>
   )
