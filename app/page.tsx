@@ -82,6 +82,16 @@ export default function Home(){
               )
             })}
           </ul>
+          <div 
+            className="
+              news-view-more
+              right-0
+            "
+          >
+            <Link href="/news">
+              View more...
+            </Link>
+          </div>
         </div>
         <div className="about-us">
           <h2>プログラミング研究会とは</h2>
@@ -92,6 +102,7 @@ export default function Home(){
             といったことを普段は行っています！
           </p>
         </div>
+
       </div>
     </div>
   )

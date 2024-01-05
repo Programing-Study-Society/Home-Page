@@ -51,9 +51,7 @@
 .news {
 	margin: 10vw;
 	height: max(20vw, 200px);
-	background-color: #e4e4e4;
 	border-radius: 5px;
-	border: #000 solid 2px;
 	overflow-y: scroll;
 	overflow-x: hidden;
 }
