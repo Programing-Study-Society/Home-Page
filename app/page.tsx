@@ -73,7 +73,7 @@ export default function Home(){
       <div className="main-contents justify-center">
         <div className="news">
           <h2 className="text-2xl">お知らせ</h2>
-          <ul className="news-list">
+          <ul className="news-topics">
             {news.map((ele, index) => {
               return (
                 <li key={index} className="w-full">
@@ -82,19 +82,18 @@ export default function Home(){
               )
             })}
           </ul>
-          <div 
-            className="
-              news-view-more
-              right-0
-            "
-          >
-            <Link href="/news">
+          <Link className="to-news-list" href="/news">
               View more...
-            </Link>
-          </div>
+          </Link>
         </div>
         <div className="about-us">
-          <h2>プログラミング研究会とは</h2>
+          <h2
+            className="
+              about-us_title
+            "
+          >
+            プログラミング研究会とは
+          </h2>
           <p>
             プログラムについて学びあい交流を深めていくサークルです！<br />
             ・サークル内で勉強会をして学ぶ<br />
@@ -102,7 +101,23 @@ export default function Home(){
             といったことを普段は行っています！
           </p>
         </div>
-
+        <div 
+          className="
+            active-date
+            mt-40
+            text-center
+          "
+        >
+        <iframe 
+          src="https://calendar.google.com/calendar/embed?src=proken0603%40gmail.com&ctz=UTC" 
+          className="
+            border-0
+          "
+          style={{border: "0"}} 
+          width="800" 
+          height="600"
+          />
+        </div>
       </div>
     </div>
   )
