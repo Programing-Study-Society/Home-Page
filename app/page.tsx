@@ -99,7 +99,11 @@ export default function Home() {
             View more...
           </Link>
         </div>
-        <div className="about-us">
+        <div
+          className="
+            about-us
+          "
+        >
           <h2
             className="
               about-us_title

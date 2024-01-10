@@ -78,10 +78,8 @@
 }
 
 .about-us {
-  margin: 0 4vw;
-  padding: 0 2vw;
-  border: #00eeff double 4px;
-  border-radius: 5px;
+  padding: 0 6vw;
+  border-top: rgb(59, 59, 59) solid 4px;
 }
 
 .about-us h2 {
