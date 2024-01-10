@@ -70,8 +70,18 @@ export default function Home(){
         </Swiper>
         <div className="scroll-allow"/>
       </div>
-      <div className="main-contents justify-center">
-        <div className="news">
+      <div 
+        className="
+          main-contents 
+          justify-center
+        "
+      >
+        <div 
+          className="
+            news
+            bg-gray-300
+          "
+        >
           <h2 className="text-2xl">お知らせ</h2>
           <ul className="news-topics">
             {news.map((ele, index) => {
