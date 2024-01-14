@@ -21,9 +21,9 @@ const news = [
     date:
       now.getFullYear().toString() +
       "/" +
-      now.getMonth().toString() +
+      (now.getMonth() + 1).toString() +
       "/" +
-      now.getDay().toString(),
+      now.getDate().toString(),
   },
 ];
 
