@@ -4,6 +4,10 @@
   --content-font-size: max(15px, min(20px, 2vw));
 }
 
+h2 {
+  font-size: var(--section-font-size);
+}
+
 /* トップの写真 */
 .scroll-allow {
   width: 100%;
@@ -59,7 +63,6 @@
 .news h2 {
   margin: 0 2vw;
   padding: 1vw;
-  font-size: var(--section-font-size);
 }
 
 .news-topics {
@@ -85,7 +88,6 @@
 .about-us h2 {
   display: inline-block;
   position: relative;
-  font-size: var(--section-font-size);
   padding: 0 2vw;
   background-color: #fff;
   top: -2vw;

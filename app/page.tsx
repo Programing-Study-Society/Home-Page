@@ -124,16 +124,24 @@ export default function Home() {
         <div
           className="
             active-date
-            flex
-            justify-center
             mt-40
           "
         >
+          <h2 
+            className={`
+              text-center
+            `}
+          >
+            活動日
+            <br />
+          </h2>
           <iframe
             src="https://calendar.google.com/calendar/embed?src=proken0603%40gmail.com&ctz=UTC"
             className="
               google-calendar
               border-0
+              ml-auto
+              mr-auto
             "
             style={{ border: "0" }}
             width="800"
