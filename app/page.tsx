@@ -6,15 +6,145 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Autoplay, Pagination } from "swiper/modules";
 
+import { NewsCard } from "@components/Card/card-components";
 import "./root-page.css";
 
 const IMAGE_PATH = "/image/";
 
 const images = ["2022-comiket.jpg", "2023-oecu-fes.jpg", "2023-summer.jpg"];
 
+const activities = [
+  {
+    title: "コミケ出展",
+    details: "ホラーゲームを1年間制作し、コミケにて出展しました！",
+    date: "2021/10/10",
+    imageUrl: undefined,
+  },
+  {
+    title: "コミケ出展",
+    details: "ホラーゲームを1年間制作し、コミケにて出展しました！",
+    date: "2021/10/10",
+    imageUrl: undefined,
+  },
+  {
+    title: "コミケ出展",
+    details: "ホラーゲームを1年間制作し、コミケにて出展しました！",
+    date: "2021/10/10",
+    imageUrl: undefined,
+  },
+  {
+    title: "コミケ出展",
+    details: "ホラーゲームを1年間制作し、コミケにて出展しました！",
+    date: "2021/10/10",
+    imageUrl: undefined,
+  },
+  {
+    title: "コミケ出展",
+    details: "ホラーゲームを1年間制作し、コミケにて出展しました！",
+    date: "2021/10/10",
+    imageUrl: undefined,
+  },
+  {
+    title: "コミケ出展",
+    details: "ホラーゲームを1年間制作し、コミケにて出展しました！",
+    date: "2021/10/10",
+    imageUrl: undefined,
+  },
+];
+
 let now: Date = new Date();
 
 const news = [
+  {
+    url: "/",
+    title: "初めまして！",
+    date:
+      now.getFullYear().toString() +
+      "/" +
+      (now.getMonth() + 1).toString() +
+      "/" +
+      now.getDate().toString(),
+  },
+  {
+    url: "/",
+    title: "初めまして！",
+    date:
+      now.getFullYear().toString() +
+      "/" +
+      (now.getMonth() + 1).toString() +
+      "/" +
+      now.getDate().toString(),
+  },
+  {
+    url: "/",
+    title: "初めまして！",
+    date:
+      now.getFullYear().toString() +
+      "/" +
+      (now.getMonth() + 1).toString() +
+      "/" +
+      now.getDate().toString(),
+  },
+  {
+    url: "/",
+    title: "初めまして！",
+    date:
+      now.getFullYear().toString() +
+      "/" +
+      (now.getMonth() + 1).toString() +
+      "/" +
+      now.getDate().toString(),
+  },
+  {
+    url: "/",
+    title: "初めまして！",
+    date:
+      now.getFullYear().toString() +
+      "/" +
+      (now.getMonth() + 1).toString() +
+      "/" +
+      now.getDate().toString(),
+  },
+  {
+    url: "/",
+    title: "初めまして！",
+    date:
+      now.getFullYear().toString() +
+      "/" +
+      (now.getMonth() + 1).toString() +
+      "/" +
+      now.getDate().toString(),
+  },
+  {
+    url: "/",
+    title: "初めまして！",
+    date:
+      now.getFullYear().toString() +
+      "/" +
+      (now.getMonth() + 1).toString() +
+      "/" +
+      now.getDate().toString(),
+  },
+  {
+    url: "/",
+    title: "初めまして！",
+    date:
+      now.getFullYear().toString() +
+      "/" +
+      (now.getMonth() + 1).toString() +
+      "/" +
+      now.getDate().toString(),
+  },
+  {
+    url: "/",
+    title: "初めまして！",
+    date:
+      now.getFullYear().toString() +
+      "/" +
+      (now.getMonth() + 1).toString() +
+      "/" +
+      now.getDate().toString(),
+  },
   {
     url: "/",
     title: "初めまして！",
@@ -106,20 +236,81 @@ export default function Home() {
         >
           <h2
             className="
+              section-title
               about-us_title
             "
           >
             プログラミング研究会とは
           </h2>
-          <p>
+          <p
+            className="
+              about-us_text
+              text-center
+            "
+          >
             プログラムについて学びあい交流を深めていくサークルです！
-            <br />
-            ・サークル内で勉強会をして学ぶ
-            <br />
-            ・プロジェクトを立ち上げて制作活動をする
-            <br />
-            といったことを普段は行っています！
           </p>
+          <div
+            className="
+              active-contents
+            "
+          >
+            <h2
+              className="
+                section-title
+                active-contents_title
+              "
+            >
+              活動内容
+            </h2>
+            <ul>
+              <li>勉強会</li>
+              <li>プロジェクト活動</li>
+              <li>コミケ参加</li>
+              <li>大学祭参加</li>
+            </ul>
+            <div
+              className="
+                active-contents_etc-text
+                text-right
+                mb-2
+                mr-4
+              "
+            >
+              etc...
+            </div>
+          </div>
+          <div className="activity-results">
+            <h3
+              className="
+                section-title
+                activity-results_title
+            "
+            >
+              活動実績
+            </h3>
+            <div
+              className="
+                activity-results_list
+                flex
+                flex-wrap
+                gap-4
+                justify-center
+              "
+            >
+              {activities.map((activity, index) => {
+                return (
+                  <NewsCard
+                    key={index}
+                    title={activity.title}
+                    details={activity.details}
+                    date={activity.date}
+                    imageUrl={activity.imageUrl}
+                  />
+                );
+              })}
+            </div>
+          </div>
         </div>
         <div
           className="
@@ -127,10 +318,11 @@ export default function Home() {
             mt-40
           "
         >
-          <h2 
-            className={`
+          <h2
+            className="
               text-center
-            `}
+              section-title
+            "
           >
             活動日
             <br />
